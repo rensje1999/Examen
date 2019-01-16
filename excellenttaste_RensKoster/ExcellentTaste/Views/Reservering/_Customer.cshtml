@@ -1,0 +1,16 @@
+﻿@model ExcellentTaste.Models.Klant
+
+@if (Model.Actief)
+{
+    <div>
+        Telefoon: @Html.DisplayFor(model => model.telefoon)
+    </div>
+}
+else
+{
+    <div style="background-color:lightcoral">
+        <p>Klant is bij vorige reservering niet gekomen!</p>
+        Telefoon: @Html.DisplayFor(model => model.telefoon)
+    </div>
+}
+

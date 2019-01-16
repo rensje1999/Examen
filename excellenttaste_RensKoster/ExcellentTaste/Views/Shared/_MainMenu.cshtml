@@ -1,0 +1,57 @@
+﻿
+<ul class="nav navbar-nav">
+    <li>
+        <a href="/Home/Index"><img src="~/Content/Images/ExcellentTaste50x50T2.png" class="img-responsive img-rounded" /></a>
+    </li>
+
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <li>@Html.ActionLink("Drankenkaart", "Index", "Drankenkaart")</li>
+        <li>@Html.ActionLink("Menukaart", "Index", "Menukaart")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    }
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li class="dropdown">
+            <a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle">Menu</a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Drankenkaart", "Index", "Drankenkaart")</li>
+                <li>@Html.ActionLink("Menukaart", "Index", "Menukaart")</li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle">Bestellingen</a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Opnemen", "Create", "Bestelling")</li>
+                <li>@Html.ActionLink("Bestelde drankjes", "Bar", "Bestelling")</li>
+                <li>@Html.ActionLink("Bestelde gerechten", "Keuken", "Bestelling")</li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle">Klantbeheer</a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Overzicht", "Index", "Klant")</li>
+                <li>@Html.ActionLink("Toevoegen", "Create", "Klant")</li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle">Consumpties</a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Hoofdgroepen", "Index", "Consumptie")</li>
+                <li>@Html.ActionLink("Subgroepen", "Index", "ConsumptieGroep")</li>
+                <li>@Html.ActionLink("Items", "Index", "ConsumptieItem")</li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle">Reserveringen</a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Overzicht", "Index", "Reservering")</li>
+                <li>@Html.ActionLink("Vandaag", "Today", "Reservering")</li>
+                <li>@Html.ActionLink("Toevoegen", "Create", "Reservering")</li>
+            </ul>
+        </li>
+    }
+</ul>
+

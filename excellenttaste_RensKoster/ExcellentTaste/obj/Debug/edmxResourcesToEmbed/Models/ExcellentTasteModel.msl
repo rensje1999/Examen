@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Bestelling">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Bestelling)">
+        <MappingFragment StoreEntitySet="Bestelling">
+          <ScalarProperty Name="totaal" ColumnName="totaal" />
+          <ScalarProperty Name="prijs" ColumnName="prijs" />
+          <ScalarProperty Name="bestellingId" ColumnName="bestellingId" />
+          <ScalarProperty Name="reserveringId" ColumnName="reserveringId" />
+          <ScalarProperty Name="consumptieItemCode" ColumnName="consumptieItemCode" />
+          <ScalarProperty Name="aantal" ColumnName="aantal" />
+          <ScalarProperty Name="dateTimeBereidingConsumptie" ColumnName="dateTimeBereidingConsumptie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consumptie">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Consumptie)">
+        <MappingFragment StoreEntitySet="Consumptie">
+          <ScalarProperty Name="consumptieCode" ColumnName="consumptieCode" />
+          <ScalarProperty Name="consumptieNaam" ColumnName="consumptieNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsumptieGroep">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.ConsumptieGroep)">
+        <MappingFragment StoreEntitySet="ConsumptieGroep">
+          <ScalarProperty Name="consumptieGroepCode" ColumnName="consumptieGroepCode" />
+          <ScalarProperty Name="consumptieCode" ColumnName="consumptieCode" />
+          <ScalarProperty Name="consumptieGroepNaam" ColumnName="consumptieGroepNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsumptieItem">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.ConsumptieItem)">
+        <MappingFragment StoreEntitySet="ConsumptieItem">
+          <ScalarProperty Name="consumptieItemCode" ColumnName="consumptieItemCode" />
+          <ScalarProperty Name="consumptieGroepCode" ColumnName="consumptieGroepCode" />
+          <ScalarProperty Name="consumptieItemNaam" ColumnName="consumptieItemNaam" />
+          <ScalarProperty Name="prijs" ColumnName="prijs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservering">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Reservering)">
+        <MappingFragment StoreEntitySet="Reservering">
+          <ScalarProperty Name="bonTotaal" ColumnName="bonTotaal" />
+          <ScalarProperty Name="reserveringId" ColumnName="reserveringId" />
+          <ScalarProperty Name="klantId" ColumnName="klantId" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="tijd" ColumnName="tijd" />
+          <ScalarProperty Name="tafel" ColumnName="tafel" />
+          <ScalarProperty Name="aantalPersonen" ColumnName="aantalPersonen" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="datumToegevoegd" ColumnName="datumToegevoegd" />
+          <ScalarProperty Name="bonDatum" ColumnName="bonDatum" />
+          <ScalarProperty Name="betalingswijze" ColumnName="betalingswijze" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GET_TODAYS_RESERVATIONS" FunctionName="Model.Store.GET_TODAYS_RESERVATIONS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.GET_TODAYS_RESERVATIONS_Result">
+          <ScalarProperty Name="klantNaam" ColumnName="klantNaam" />
+          <ScalarProperty Name="telefoon" ColumnName="telefoon" />
+          <ScalarProperty Name="tijd" ColumnName="tijd" />
+          <ScalarProperty Name="tafel" ColumnName="tafel" />
+          <ScalarProperty Name="aantalPersonen" ColumnName="aantalPersonen" />
+          <ScalarProperty Name="datumToegevoegd" ColumnName="datumToegevoegd" />
+          <ScalarProperty Name="reserveringId" ColumnName="reserveringId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="BonBestellingen" ColumnName="BonBestellingen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Klant">
+      <EntityTypeMapping TypeName="Model.Klant">
+        <MappingFragment StoreEntitySet="Klant">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="telefoon" ColumnName="telefoon" />
+          <ScalarProperty Name="klantNaam" ColumnName="klantNaam" />
+          <ScalarProperty Name="klantId" ColumnName="klantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

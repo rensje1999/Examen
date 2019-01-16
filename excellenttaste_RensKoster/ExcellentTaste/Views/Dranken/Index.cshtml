@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ExcellentTaste.Models.Consumptie>
+
+<h1>
+    <strong>
+        EXCELLENT TASTE<br />
+        DRANKEN- EN<br />
+        HAPJESKAART
+    </strong>
+</h1>
+<br />
+
+@*Let op! De HTML moet nog worden opgemaakt in CSS. *@
+
+
+@foreach (var objConsumptie in Model)
+{
+
+        <h3><strong>@Html.DisplayFor(modelItem => objConsumptie.consumptieNaam)</strong></h3>
+
+        var cg = objConsumptie.ConsumptieGroep;
+        foreach (var objConsumptieGroep in cg)
+        {
+            <h4>@Html.DisplayFor(modelx => objConsumptieGroep.consumptieGroepNaam)</h4>
+
+            var ci = objConsumptieGroep.ConsumptieItem;
+
+            <table class="table" style="width:50%">
+                @foreach (var objConsumptieItem in ci.OrderBy(d=>d.consumptieItemNaam))
+                {
+                    <tr>
+                        <td class="col-5" style="width:50%">
+                            @Html.DisplayFor(modely => objConsumptieItem.consumptieItemNaam)
+                        </td>
+                        <td class="col-5" style="width:50%">
+                            @Html.DisplayFor(modely => objConsumptieItem.prijs)
+                        </td>
+                    </tr>
+                }
+            </table>
+            <br />
+        }
+    
+}
+

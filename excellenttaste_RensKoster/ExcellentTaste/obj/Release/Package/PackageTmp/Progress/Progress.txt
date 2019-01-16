@@ -1,0 +1,12 @@
+﻿De volgende functionaliteiten moeten gerealiseerd worden.
+	De gegevens van de dranken moeten kunnen worden toegevoegd, gewijzigd en verwijderd worden.
+	De gegevens van de gerechten moeten kunnen worden toegevoegd, gewijzigd en verwijderd worden.
+	De gegevens van de reserveringen moeten kunnen worden toegevoegd, gewijzigd en verwijderd worden.
+	De bestellingen moeten efficiënt worden ingevoerd.
+	De barman moet een lijst zien met daarop de dranken die klaargemaakt moeten worden. De lijst is gesorteerd op tijd en tafel.
+	De kok moet een lijst zien met daarop de gerechten die klaargemaakt moeten worden. De lijst is gesorteerd op tijd en tafel.
+	Er moet een bon kunnen worden uitgedraaid voor de klant waarop de bestelde producten staan met de prijs en een totaal te betalen prijs.
+	De applicatie moet een menukaart kunnen genereren.
+	De applicatie moet een drankenlijst kunnen genereren.
+	Er moet een waarschuwing op het scherm worden geplaatst als iemand reserveert die de vorige keer geen gebruik heeft gemaakt van de reservering.
+	Er moet een lijst van reserveringen van de huidige dag kunnen worden opgeroepen.

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ExcellentTaste.Models.Bestelling>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Reservering.tafel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsumptieItem.consumptieGroepCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsumptieItem.consumptieItemNaam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aantal)
+        </th>
+
+        <th>Uitlevering</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservering.tafel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsumptieItem.consumptieGroepCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsumptieItem.consumptieItemNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aantal)
+            </td>
+            <td>
+                @if (item.dateTimeBereidingConsumptie != null)
+                {
+                <span>@item.dateTimeBereidingConsumptie.ToString()</span>
+                    //Html.ActionLink("Naar bon", "ToReceipt", new { id = item.bestellingId });
+                }
+                else
+                {
+                    <a href="/Bestelling/ToReceipt?id=@item.bestellingId&from=B">Naar bon</a>
+
+                    //Html.DisplayFor(modelIem => item.dateTimeBereidingConsumptie);
+                }
+            </td>
+        </tr>
+    }
+
+</table>

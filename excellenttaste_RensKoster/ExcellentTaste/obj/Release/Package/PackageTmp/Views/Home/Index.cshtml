@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-2">
+            <img src="~/Content/Images/ExcellentTaste250x250.png" class="img-rounded" />
+        </div>
+        <div class="col-md-10">
+            <div class="jquery-script-clear"></div>
+
+
+            <p id='changing'></p>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+            <script src="~/Scripts/autochange_text.js"></script>
+            <script>
+                startChangingText(['Welkom', 'Bij', 'Excellent Taste'], 3)
+            </script>
+        </div>
+    </div>
+</div>
+<h1>Reserveringssysteem voor Excellent Taste</h1>

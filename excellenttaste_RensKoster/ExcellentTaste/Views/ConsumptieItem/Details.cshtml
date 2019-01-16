@@ -1,0 +1,42 @@
+﻿@model ExcellentTaste.Models.ConsumptieItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ConsumptieItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.consumptieItemNaam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consumptieItemNaam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prijs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prijs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumptieGroep.consumptieCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsumptieGroep.consumptieCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Wijzig", "Edit", new { id = Model.consumptieItemCode }) |
+    @Html.ActionLink("Terug naar overzicht", "Index")
+</p>
